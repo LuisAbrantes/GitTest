@@ -1,22 +1,20 @@
-var person = {
-    firstName : "John",
-    lastName : "Smith",
-    age : 23
-};
-
-function printFullName()
-{
-    console.log(this.firstName + " " + this.lastName);
+class Person {
+    constructor() { }
+    initialize(name, age) {
+        this.name = name;
+        this.age = age;
+    }
 }
 
-function printDetails()
-{
-    console.log(this.firstName + " is " + this.age + " years old");
+class Teacher {
+    constructor() {};
+    teach(subject) {
+        console.log(this.name + ' is now teaching ' + subject);
+    }
 }
+Teacher.prototype = new Person();
 
-// TODO: create bound copies of printFullName and printDetails.
-var boundPrintFullName;
-var boundPrintDetails;
+var him = new Teacher();
 
-boundPrintFullName();
-boundPrintDetails();
+him.initialize("Adam", 45);
+him.teach("Inheritance");
