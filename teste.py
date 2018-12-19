@@ -10,7 +10,9 @@ numbers = [
 
 # your code goes here
 for number in numbers:
-    if number > 237:
-        break
-    if number % 2 == 0:
-        print(number)
+    if number >= 237:
+        continue
+    if number % 2 == 1:
+        continue
+    
+    print(number)
